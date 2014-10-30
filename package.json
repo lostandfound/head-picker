@@ -1,0 +1,18 @@
+{
+  "name": "head-picker",
+  "version": "0.0.1",
+  "description": "Extract heading elements from HTML string.",
+  "private": "true",
+  "main": "index.js",
+  "keywords": [
+    "html",
+    "metadata"
+  ],
+  "author": "Hiroshi Takase",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.17.0"
+  },
+  "devDependencies": {
+  }
+}
