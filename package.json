@@ -2,7 +2,7 @@
   "name": "head-picker",
   "version": "0.0.1",
   "description": "Extract heading elements from HTML string.",
-  "private": "true",
+  "private": "false",
   "main": "index.js",
   "keywords": [
     "html",
