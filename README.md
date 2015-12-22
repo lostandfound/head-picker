@@ -58,7 +58,7 @@ This returns a object with two properties:
      { title: 'Heading4', tag: 'h4', rank: 4, id: 'toc_index_3' },
      { title: 'Heading5', tag: 'h5', rank: 5, id: 'toc_index_4' },
      { title: 'Heading6', tag: 'h6', rank: 6, id: 'toc_index_5' } ],
-  html: '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="utf-8">\n<meta http-equiv="X-UA-Compatible" content="IE=edge">\n<title>title</title>\n<link rel="stylesheet" href="">\n</head>\n<body>\n<h1 id="toc_index_0">Heading1</h1>\n<h2 id="toc_index_1">Heading2</h2>\n<h3 id="toc_index_2">Heading3</h3>\n<h4 id="toc_index_3">Heading4</h4>\n<h5 id="toc_index_4">Heading5</h5>\n<h6 id="toc_index_5">Heading6</h6>\n</body>\n</html>' }
+  contents: '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="utf-8">\n<meta http-equiv="X-UA-Compatible" content="IE=edge">\n<title>title</title>\n<link rel="stylesheet" href="">\n</head>\n<body>\n<h1 id="toc_index_0">Heading1</h1>\n<h2 id="toc_index_1">Heading2</h2>\n<h3 id="toc_index_2">Heading3</h3>\n<h4 id="toc_index_3">Heading4</h4>\n<h5 id="toc_index_4">Heading5</h5>\n<h6 id="toc_index_5">Heading6</h6>\n</body>\n</html>' }
 ```
 
 ## License
