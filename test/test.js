@@ -9,9 +9,9 @@ describe('hp', function() {
     var result = hp(str)
 
     assert.ok(result.toc)
-    assert.ok(result.html)
+    assert.ok(result.contents)
     assert.equal(result.toc.length, 0)
-    assert.equal(result.html, 'foo')
+    assert.equal(result.contents, 'foo')
   });
 });
 
@@ -21,10 +21,10 @@ describe('hp', function() {
     var result = hp(str)
 
     assert.ok(result.toc)
-    assert.ok(result.html)
+    assert.ok(result.contents)
     assert.equal(result.toc.length, 1)
     assert.equal(result.toc[0].title, 'Heading1')
-    assert.equal(result.html, '<h1 id="' + idPrefix + '0">Heading1</h1>')
+    assert.equal(result.contents, '<h1 id="' + idPrefix + '0">Heading1</h1>')
   });
 });
 
@@ -35,9 +35,9 @@ describe('hp', function() {
     var html = '<h1 id="' + idPrefix + '0">Heading1</h1><h2 id="' + idPrefix + '1">Heading2</h2><h3 id="' + idPrefix + '2">Heading3</h3><h4 id="' + idPrefix + '3">Heading4</h4><h5 id="' + idPrefix + '4">Heading5</h5><h6 id="' + idPrefix + '5">Heading6</h6>'
 
     assert.ok(result.toc)
-    assert.ok(result.html)
+    assert.ok(result.contents)
     assert.equal(result.toc.length, 6)
-    assert.equal(result.html, html)
+    assert.equal(result.contents, html)
   });
 });
 
@@ -47,23 +47,36 @@ describe('hp', function() {
     var result = hp(str)
 
     assert.ok(result.toc)
-    assert.ok(result.html)
+    assert.ok(result.contents)
     assert.equal(result.toc.length, 1)
     assert.equal(result.toc[0].title, 'Heading1')
-    assert.equal(result.html, '<h1 id="h">Heading1</h1>')
+    assert.equal(result.contents, '<h1 id="h">Heading1</h1>')
   });
 });
 
 describe('hp', function() {
   it('has one heading element with title attribute but no text content', function() {
     var str = '<h1 title="Heading1"></h1>';
-    var result = hp(str)
+    var result = hp(str, {format: 'html'});
 
     assert.ok(result.toc)
-    assert.ok(result.html)
+    assert.ok(result.contents)
     assert.equal(result.toc.length, 1)
     assert.equal(result.toc[0].title, 'Heading1')
-    assert.equal(result.html, '<h1 title="Heading1" id="' + idPrefix + '0"></h1>')
+    assert.equal(result.contents, '<h1 title="Heading1" id="' + idPrefix + '0"></h1>')
+  });
+});
+
+describe('hp', function() {
+  it('output xml', function() {
+    var str = '<h1>Heading1</h1><hr>';
+    var result = hp(str,{format: 'xml'})
+
+    assert.ok(result.toc)
+    assert.ok(result.contents)
+    assert.equal(result.toc.length, 1)
+    assert.equal(result.toc[0].title, 'Heading1')
+    assert.equal(result.contents, '<h1 id="' + idPrefix + '0">Heading1</h1><hr/>')
   });
 });
 
